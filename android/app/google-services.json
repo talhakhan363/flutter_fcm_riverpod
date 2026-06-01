@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "875938785432",
+    "project_id": "flutter-fcm-bonus",
+    "storage_bucket": "flutter-fcm-bonus.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:875938785432:android:71042da2dbb0f70b49c8ed",
+        "android_client_info": {
+          "package_name": "com.example.flutter_fcm_riverpod"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgqc583MsjuRdQPKD3yJu32P-7dsT13bc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
