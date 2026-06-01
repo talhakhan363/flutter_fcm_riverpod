@@ -1,19 +1,23 @@
-/*  Houses the StateNotifier and StateNotifierProvider. This is the Riverpod 
+/*  Houses the modern Notifier and NotifierProvider. This is the Riverpod 
     equivalent of the Week 6 provider task, offering immutable state updates and better 
     compile-time safety. 
     DIFFERENCE: Riverpod enforces immutability. Instead of modifying an existing list and yelling 
     notifyListeners() like we did in the standard Provider, Riverpod requires us to create 
     a brand new list every time a state changes. It is safer, faster, and highly preferred 
     in enterprise software. 
-    Now we extend StateNotifier instead of ChangeNotifier. Whenever we assign a new 
+    Now we extend Notifier (modern Riverpod syntax) instead of ChangeNotifier or the legacy StateNotifier. Whenever we assign a new 
     value to state, Riverpod automatically rebuilds the UI. No notifyListeners() required. */
 
 import 'package:flutter_riverpod/flutter_riverpod.dart'; // The Riverpod package for state management
 import '../models/task_model.dart'; // The Task model defines the structure of our tasks (id, title, isCompleted)
 
 // 1. The Notifier (The Logic)
-class TaskNotifier extends StateNotifier<List<Task>> {
-  TaskNotifier() : super([]); // Initial state is an empty list
+class TaskNotifier extends Notifier<List<Task>> {
+  // In modern Riverpod, we use a build() method to set the initial state instead of super()
+  @override
+  List<Task> build() {
+    return []; // Initial state is an empty list
+  }
 
   void addTask(String title) {
     final newTask = Task(id: DateTime.now().toString(), title: title);
@@ -45,6 +49,6 @@ class TaskNotifier extends StateNotifier<List<Task>> {
 }
 
 // 2. The Global Provider Declaration (How the UI accesses the logic)
-final taskProvider = StateNotifierProvider<TaskNotifier, List<Task>>((ref) {
+final taskProvider = NotifierProvider<TaskNotifier, List<Task>>(() {
   return TaskNotifier();
 });
