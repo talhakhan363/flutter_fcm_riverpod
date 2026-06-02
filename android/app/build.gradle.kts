@@ -11,7 +11,9 @@ plugins {
 android {
     namespace = "com.example.flutter_fcm_riverpod"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    
+    // 1. Hardcoded the explicit modern NDK version required by Firebase
+    ndkVersion = "27.0.12077973"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -27,7 +29,10 @@ android {
         applicationId = "com.example.flutter_fcm_riverpod"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
+        
+        // 2. Upgraded the minSdk from the default 21 to 23
+        minSdk = 23
+        
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
