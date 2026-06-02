@@ -6,8 +6,8 @@
     Important Note for Firebase: Background messages require a special "top-level" function 
     that lives outside of any class so it can run even when the app is terminated. */
 
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:firebase_core/firebase_core.dart'; // Used to initialize Firebase in the background handler
+import 'package:firebase_messaging/firebase_messaging.dart'; // The Firebase Messaging package for handling push notifications
 import 'package:flutter/material.dart';
 
 // ⚡ 1. Top-Level Background Handler (Must be outside the class)
