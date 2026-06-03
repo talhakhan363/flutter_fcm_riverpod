@@ -31,7 +31,7 @@ class HomeScreen extends ConsumerWidget {
             Icon(Icons.cloud_done_outlined, color: Colors.tealAccent, size: 28),
             SizedBox(width: 10),
             Text(
-              'RIVERPOD TASKS',
+              'MY TASKS',
               style: TextStyle(fontWeight: FontWeight.w900, letterSpacing: 2.0, fontSize: 22, color: Colors.white),
             ),
           ],
